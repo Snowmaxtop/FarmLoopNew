@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 553471037598011776}
   - component: {fileID: 3941604557581353126}
+  - component: {fileID: 6500624312866468507}
   m_Layer: 0
   m_Name: GRIDMANAGER
   m_TagString: Untagged
@@ -44,3 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f48ab873829104dbbcfeac1a681a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gridGenerator: {fileID: 6500624312866468507}
+--- !u!114 &6500624312866468507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985410628776836856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d5c7fe5b84f1f479fad0bb594bd423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 7360432361712753134, guid: a175141ac24af3142b319e52374bde32, type: 3}
+  width: 3
+  height: 3
+  spacing: 1
+  AdditionalRow: 1
+  allCells: []
+  allObstacles: []
+  TownHall: {fileID: 2689492080754168855, guid: b6c76228ccadfd84faad8d69f7721cea, type: 3}
+  Tree: {fileID: 1078471269041948938, guid: 1a6c5cfa4f869bd4dbcb223ae750b945, type: 3}
+  Stone: {fileID: 6358213343032739505, guid: 0bcde6ba7b0e4c54b96684a676410751, type: 3}

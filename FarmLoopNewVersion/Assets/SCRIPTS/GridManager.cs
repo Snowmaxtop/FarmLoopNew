@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GridManager : Singleton<GridManager>
 {
+    public GridGenerator _gridGenerator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -12,6 +12,7 @@ public class GridGenerator : MonoBehaviour
     
 
     public List<GameObject> allCells = new List<GameObject>();
+    public List<GameObject> allObstacles = new List<GameObject>();
     public GameObject TownHall;
     public GameObject Tree;
     public GameObject Stone;
@@ -90,12 +91,17 @@ public class GridGenerator : MonoBehaviour
                             GameObject currentTree = Instantiate(Tree, cell.transform.position + Tree.transform.position, Quaternion.identity, cell.transform);
                             currentGridCell.obstacle = GridCell.Obstacle.Tree;
                             currentGridCell.holdPuzzlePiece = currentTree;
+                            currentTree.GetComponent<RemoveObstacles>().cellHolder = currentGridCell;
+                            allObstacles.Add(currentTree);
                         }
                         else if (Stone != null)
                         {
                             GameObject currentStone = Instantiate(Stone, cell.transform.position + Stone.transform.position, Quaternion.identity, cell.transform);
                             currentGridCell.obstacle = GridCell.Obstacle.Stone;
+                            
                             currentGridCell.holdPuzzlePiece = currentStone;
+                            currentStone.GetComponent<RemoveObstacles>().cellHolder = currentGridCell;
+                            allObstacles.Add(currentStone);
                         }
                     }
                 }

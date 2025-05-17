@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public GridManager _gridManagerInstance = GridManager.Instance;
+    public CanvasManager _canvasManagerInstance = CanvasManager.Instance;   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
