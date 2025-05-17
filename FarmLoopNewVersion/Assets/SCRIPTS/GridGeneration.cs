@@ -8,11 +8,13 @@ public class GridGenerator : MonoBehaviour
     [SerializeField] private int width = 5;    // Number of columns
     [SerializeField] private int height = 5;   // Number of rows
     [SerializeField] private float spacing = 1f; // Distance between cells
-    [SerializeField] private float AdditionalRow = 0f; // Distance between cells
+    [SerializeField] private int AdditionalRow = 0; // Distance between cells
     
 
     public List<GameObject> allCells = new List<GameObject>();
     public GameObject TownHall;
+    public GameObject Tree;
+    public GameObject Stone;
 
     private void Start()
     {
@@ -22,7 +24,7 @@ public class GridGenerator : MonoBehaviour
     private void GenerateGrid()
     {
         GenerateCell();
-        GenerateExtraLayers(2);
+        GenerateExtraLayers(AdditionalRow);
         GenerateTownHall();
     }
 
@@ -74,12 +76,27 @@ public class GridGenerator : MonoBehaviour
                     {
                         Vector2 position = new Vector2(x * spacing, y * spacing);
                         GameObject cell = Instantiate(cellPrefab, position, Quaternion.identity, transform);
+                        GridCell currentGridCell = cell.GetComponent<GridCell>();
                         cell.name = $"Cell ({x}, {y})";
-                        cell.GetComponent<GridCell>().gridPosition = pos;
-
+                        currentGridCell.gridPosition = pos;
+                        currentGridCell.cellState = GridCell.CellState.Obstructed;
                         allCells.Add(cell);
-                        cell.GetComponent<GridCell>().cellState = GridCell.CellState.Obstructed;
                         existingPositions.Add(pos);
+
+                        // 70% Tree, 30% Stone
+                        float chance = Random.value;
+                        if (chance < 0.7f && Tree != null)
+                        {
+                            GameObject currentTree = Instantiate(Tree, cell.transform.position + Tree.transform.position, Quaternion.identity, cell.transform);
+                            currentGridCell.obstacle = GridCell.Obstacle.Tree;
+                            currentGridCell.holdPuzzlePiece = currentTree;
+                        }
+                        else if (Stone != null)
+                        {
+                            GameObject currentStone = Instantiate(Stone, cell.transform.position + Stone.transform.position, Quaternion.identity, cell.transform);
+                            currentGridCell.obstacle = GridCell.Obstacle.Stone;
+                            currentGridCell.holdPuzzlePiece = currentStone;
+                        }
                     }
                 }
             }
@@ -87,11 +104,13 @@ public class GridGenerator : MonoBehaviour
     }
 
 
+
     private void GenerateTownHall()
     {
         GameObject centerCell = GetCellAt(new Vector2Int(0, 0));
-        Instantiate(TownHall, centerCell.transform.position + TownHall.transform.position, Quaternion.identity, transform);
+        GameObject townHall = Instantiate(TownHall, centerCell.transform.position + TownHall.transform.position, Quaternion.identity, transform);
         centerCell.GetComponent<GridCell>().cellState = GridCell.CellState.Occupied;
+        centerCell.GetComponent<GridCell>().holdPuzzlePiece = townHall;
     }
 
     public GameObject GetCellAt(Vector2Int coords)
