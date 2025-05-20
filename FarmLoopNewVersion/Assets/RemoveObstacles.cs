@@ -34,6 +34,7 @@ public class RemoveObstacles : MonoBehaviour
                 CanvasManager.Instance.updateShovelCount(InventoryManager.Instance.shovelInventoryAmount - cellHolder.shovelCost);
                 CanvasManager.Instance.updateDynamiteCount(InventoryManager.Instance.dynamiteInventoryAmount - cellHolder.dynamiteCost);
                 cellHolder.holdPuzzlePiece = null;
+                CameraManager.Instance.Shake(0.1f, 0.1f);
                 GridManager.Instance._gridGenerator.allObstacles.Remove(this.gameObject);
                 Destroy(this.gameObject);
 
@@ -46,6 +47,7 @@ public class RemoveObstacles : MonoBehaviour
                 CanvasManager.Instance.updateShovelCount(InventoryManager.Instance.shovelInventoryAmount - cellHolder.shovelCost);
                 CanvasManager.Instance.updateDynamiteCount(InventoryManager.Instance.dynamiteInventoryAmount - cellHolder.dynamiteCost);
                 cellHolder.holdPuzzlePiece = null;
+                CameraManager.Instance.Shake(0.1f, 0.1f);
                 GridManager.Instance._gridGenerator.allObstacles.Remove(this.gameObject);
                 Destroy(this.gameObject);
 
