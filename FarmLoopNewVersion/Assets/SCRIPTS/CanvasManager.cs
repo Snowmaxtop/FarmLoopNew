@@ -7,6 +7,7 @@ public class CanvasManager : Singleton<CanvasManager>
 {
     [SerializeField] private TextMeshProUGUI shovelCount;
     [SerializeField] private TextMeshProUGUI dynamiteCount;
+    [SerializeField] private GameObject ShopMenu;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,5 +31,25 @@ public class CanvasManager : Singleton<CanvasManager>
     {
         dynamiteCount.text = newDynamiteCount.ToString();
         InventoryManager.Instance.dynamiteInventoryAmount = newDynamiteCount;
+    }
+
+    public void CloseShopMenu()
+    {
+        if (ShopMenu.gameObject.activeSelf)
+        {
+            Debug.Log("CalledClose");
+            ShopMenu.SetActive(false);
+        }
+
+        
+    }
+    public void OpenShopMenu()
+    {
+        if (ShopMenu.gameObject.activeSelf == false)
+        {
+            Debug.Log("CalledOpen");
+            ShopMenu.SetActive(true);
+
+        }
     }
 }
