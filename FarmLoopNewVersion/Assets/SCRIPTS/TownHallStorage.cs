@@ -9,24 +9,24 @@ public class ItemAmountEntry
     public int amount;
 }
 
-public class TownHallStorage : MonoBehaviour
+public class TownHallStorage : Singleton<TownHallStorage>
 {
     // Serialized view for inspector
     [SerializeField] private List<ItemAmountEntry> itemEntries = new List<ItemAmountEntry>();
 
     // Runtime dictionary
-    private Dictionary<ItemData, int> storedItems = new Dictionary<ItemData, int>();
+    public Dictionary<ItemData, int> storedItems = new Dictionary<ItemData, int>();
 
     void Awake()
     {
         BuildDictionaryFromList();
 
         foreach (var item in ShopManager.Instance.tier0List)
-            AddItem(item, 0);
+            AddItem(item, 3); //VALEUR INITIAL = 0 (mais cheat pour give des resources)
         foreach (var item in ShopManager.Instance.tier1List)
-            AddItem(item, 0);
+            AddItem(item, 3);//VALEUR INITIAL = 0 (mais cheat pour give des resources)
         foreach (var item in ShopManager.Instance.tier2List)
-            AddItem(item, 0);
+            AddItem(item, 3);//VALEUR INITIAL = 0 (mais cheat pour give des resources)
 
         UpdateSerializedList(); // Reflect any new items in the inspector
     }

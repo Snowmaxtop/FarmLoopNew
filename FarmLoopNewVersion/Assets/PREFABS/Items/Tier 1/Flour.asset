@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Flour
   m_EditorClassIdentifier: 
   itemName: Flour
-  icon: {fileID: 21300000, guid: d39726aae600e87418ec468ef7ef41f6, type: 3}
   tier: 1
-  baseValue: 0
+  baseValue: 10
+  icon: {fileID: 21300000, guid: d39726aae600e87418ec468ef7ef41f6, type: 3}

@@ -32,7 +32,7 @@ public class ShopManager : Singleton<ShopManager>
     public void Start()
     {
         SelectNewItems();
-        RefreshSlots();
+        
     }
 
     public void UpdateTimerDisplay(float time, float totalTime)
@@ -47,7 +47,6 @@ public class ShopManager : Singleton<ShopManager>
     public void ResetShop()
     {
         SelectNewItems();
-        RefreshSlots();
     }
 
     private void SelectNewItems()
@@ -60,6 +59,8 @@ public class ShopManager : Singleton<ShopManager>
         previousTier0Items = new HashSet<ItemData>(tier0ItemSelected);
         previousTier1Items = new HashSet<ItemData>(tier1ItemSelected);
         previousTier2Items = new HashSet<ItemData>(tier2ItemSelected);
+
+        RefreshSlots();
     }
 
     private List<ItemData> GetUniqueRandomItems(List<ItemData> sourceList, HashSet<ItemData> previousItems)

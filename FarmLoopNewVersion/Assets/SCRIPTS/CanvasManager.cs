@@ -7,19 +7,35 @@ public class CanvasManager : Singleton<CanvasManager>
 {
     [SerializeField] private TextMeshProUGUI shovelCount;
     [SerializeField] private TextMeshProUGUI dynamiteCount;
+    [SerializeField] private TextMeshProUGUI goldCount;
+
     [SerializeField] private GameObject ShopMenu;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private ItemData carrot;
+
+   // Start is called once before the first execution of Update after the MonoBehaviour is created
+   void Start()
     {
         updateShovelCount (InventoryManager.Instance.shovelInventoryAmount);
         updateDynamiteCount(InventoryManager.Instance.dynamiteInventoryAmount);
+        updateGoldcount(InventoryManager.Instance.goldInventoryAmount);
+    }
+
+    public void AddCarrot()
+    {
+        TownHallStorage.Instance.AddItem(carrot, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void updateGoldcount(int newGoldCount)
+    {
+        goldCount.text = newGoldCount.ToString();
+        InventoryManager.Instance.goldInventoryAmount = newGoldCount;
     }
 
     public void updateShovelCount(int newShovelCount)
