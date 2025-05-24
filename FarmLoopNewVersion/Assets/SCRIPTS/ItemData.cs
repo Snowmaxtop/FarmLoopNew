@@ -4,7 +4,8 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     public string itemName;
-    public Sprite icon; // Optional: for UI
+    public int tier;
     // Add other info if needed, like rarity, price, etc.
     public int baseValue;
+    public Sprite icon; // Optional: for UI
 }

@@ -38,6 +38,7 @@ public class CanvasManager : Singleton<CanvasManager>
         if (ShopMenu.gameObject.activeSelf)
         {
             Debug.Log("CalledClose");
+            GameManager.Instance.shopOpen = false;
             ShopMenu.SetActive(false);
         }
 
@@ -48,7 +49,13 @@ public class CanvasManager : Singleton<CanvasManager>
         if (ShopMenu.gameObject.activeSelf == false)
         {
             Debug.Log("CalledOpen");
+            GameManager.Instance.shopOpen = true;
             ShopMenu.SetActive(true);
+
+            foreach (GameObject obstacles in GridManager.Instance._gridGenerator.allObstacles)
+            {
+                obstacles.GetComponent<RemoveObstacles>().DesactivateDestroyUI();
+            }
 
         }
     }

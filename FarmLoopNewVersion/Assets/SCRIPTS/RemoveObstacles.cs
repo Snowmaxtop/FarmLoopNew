@@ -10,14 +10,17 @@ public class RemoveObstacles : MonoBehaviour
 
     public void ActivateDestroyUI()
     {
-        foreach(GameObject obstacles in GridManager.Instance._gridGenerator.allObstacles)
+        if(GameManager.Instance.shopOpen == false)
         {
-            obstacles.GetComponent<RemoveObstacles>().DesactivateDestroyUI();
-        }
+            foreach (GameObject obstacles in GridManager.Instance._gridGenerator.allObstacles)
+            {
+                obstacles.GetComponent<RemoveObstacles>().DesactivateDestroyUI();
+            }
 
-        shovelCost.text = cellHolder.shovelCost.ToString();
-        dynamiteCost.text = cellHolder.dynamiteCost.ToString();
-        obstacleUI.SetActive(true);
+            shovelCost.text = cellHolder.shovelCost.ToString();
+            dynamiteCost.text = cellHolder.dynamiteCost.ToString();
+            obstacleUI.SetActive(true);
+        }
     }
 
     public void DesactivateDestroyUI()

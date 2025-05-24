@@ -1,20 +1,40 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    public GridManager _gridManagerInstance = GridManager.Instance;
-    public CanvasManager _canvasManagerInstance = CanvasManager.Instance;
-    public CameraManager _cameraManagerInstance = CameraManager.Instance;
+    [SerializeField] private TextMeshProUGUI timerText;
+    public float totalTime = 20f; // 20 minutes = 20 * 60 seconds
+    private float currentTime;
+    public bool shopOpen = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-           
+        currentTime = totalTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        currentTime -= Time.deltaTime;
+
+        if (shopOpen)
+        {
+            ShopManager.Instance.UpdateTimerDisplay(currentTime, totalTime);
+        }
+
+        if (currentTime <= 0f)
+        {
+            ResetShopTimer();
+        }
     }
+    private void ResetShopTimer()
+    {
+        if (currentTime <= 0f)
+        {
+            //ResetShop;
+            currentTime = totalTime; // Reset the timer
+            ShopManager.Instance.ResetShop();
+        }
+    }
+
 }

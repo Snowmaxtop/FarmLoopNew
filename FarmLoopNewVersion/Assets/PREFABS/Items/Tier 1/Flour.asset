@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbbef02443875ad4581074a29a26a164, type: 3}
-  m_Name: Eggs
+  m_Name: Flour
   m_EditorClassIdentifier: 
-  itemName: Eggs
-  icon: {fileID: 21300000, guid: 5bb857b7d25be014ab348b23e417ca65, type: 3}
-  baseValue: 3
+  itemName: Flour
+  icon: {fileID: 21300000, guid: d39726aae600e87418ec468ef7ef41f6, type: 3}
+  tier: 1
+  baseValue: 0
