@@ -1,16 +1,13 @@
+using System;
 using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] public PuzzlePieceSO PuzzlePieceSO;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

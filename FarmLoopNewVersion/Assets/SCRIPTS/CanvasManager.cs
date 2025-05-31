@@ -62,17 +62,20 @@ public class CanvasManager : Singleton<CanvasManager>
     }
     public void OpenShopMenu()
     {
-        if (ShopMenu.gameObject.activeSelf == false)
+        if(GameManager.Instance.buildOpen == false)
         {
-            Debug.Log("CalledOpen");
-            GameManager.Instance.shopOpen = true;
-            ShopMenu.SetActive(true);
-
-            foreach (GameObject obstacles in GridManager.Instance._gridGenerator.allObstacles)
+            if (ShopMenu.gameObject.activeSelf == false)
             {
-                obstacles.GetComponent<RemoveObstacles>().DesactivateDestroyUI();
-            }
+                Debug.Log("CalledOpen");
+                GameManager.Instance.shopOpen = true;
+                ShopMenu.SetActive(true);
 
+                foreach (GameObject obstacles in GridManager.Instance._gridGenerator.allObstacles)
+                {
+                    obstacles.GetComponent<RemoveObstacles>().DesactivateDestroyUI();
+                }
+
+            }
         }
     }
 }

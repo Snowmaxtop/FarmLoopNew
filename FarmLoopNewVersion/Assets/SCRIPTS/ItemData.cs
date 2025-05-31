@@ -8,4 +8,5 @@ public class ItemData : ScriptableObject
     // Add other info if needed, like rarity, price, etc.
     public int baseValue;
     public Sprite icon; // Optional: for UI
+    public float processTime;
 }

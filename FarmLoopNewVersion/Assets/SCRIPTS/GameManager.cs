@@ -6,7 +6,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private TextMeshProUGUI timerText;
     public float totalTime = 20f; // 20 minutes = 20 * 60 seconds
     private float currentTime;
-    public bool shopOpen = true;
+    public bool shopOpen = false;
+    public bool buildOpen = false;
 
     void Start()
     {
