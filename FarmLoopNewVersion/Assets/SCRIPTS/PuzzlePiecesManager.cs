@@ -1,16 +1,12 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PuzzlePiecesManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public List<GameObject> generatorPuzzlePieces = new List<GameObject>();
+    public List<GameObject> convertorPuzzlePieces = new List<GameObject>();
+    public List<GameObject> decorationsPuzzlePieces = new List<GameObject>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

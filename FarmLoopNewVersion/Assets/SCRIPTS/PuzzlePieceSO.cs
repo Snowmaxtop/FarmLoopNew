@@ -17,4 +17,7 @@ public class PuzzlePieceSO : ScriptableObject
 
     public ItemData itemGenerated;
     public float processTime;
+
+    public Sprite directionSprite;
+    public Sprite puzzlePieceIcon;
 }

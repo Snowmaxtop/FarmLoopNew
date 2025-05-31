@@ -15,7 +15,9 @@ MonoBehaviour:
   entryDirection: 3
   exitDirection: 1
   PuzzlePieceType: 0
-  puzzlePieceLevel: 1
-  puzzlePieceName: 
+  puzzlePieceLevel: 11
+  puzzlePieceName: b
   itemGenerated: {fileID: 0}
   processTime: 0
+  directionSprite: {fileID: 21300000, guid: 919b199b632ea084d9075196ef929f8c, type: 3}
+  puzzlePieceIcon: {fileID: 0}

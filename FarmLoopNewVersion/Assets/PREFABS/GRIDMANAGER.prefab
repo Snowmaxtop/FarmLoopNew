@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 553471037598011776}
   - component: {fileID: 3941604557581353126}
   - component: {fileID: 6500624312866468507}
+  - component: {fileID: 1249476720844756486}
   m_Layer: 0
   m_Name: GRIDMANAGER
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gridGenerator: {fileID: 6500624312866468507}
+  _puzzlePiecesManager: {fileID: 1249476720844756486}
 --- !u!114 &6500624312866468507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,3 +70,30 @@ MonoBehaviour:
   TownHall: {fileID: 2689492080754168855, guid: b6c76228ccadfd84faad8d69f7721cea, type: 3}
   Tree: {fileID: 1078471269041948938, guid: 1a6c5cfa4f869bd4dbcb223ae750b945, type: 3}
   Stone: {fileID: 6358213343032739505, guid: 0bcde6ba7b0e4c54b96684a676410751, type: 3}
+--- !u!114 &1249476720844756486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985410628776836856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45f65b1ee6772344b7a1e17e434f8fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generatorPuzzlePieces:
+  - {fileID: 6601928509834958478, guid: 90e070faa65d52e4e9085ad6b13a2b39, type: 3}
+  - {fileID: 6601928509834958478, guid: 276f9bce703c34b49b3b91975660b88d, type: 3}
+  - {fileID: 6601928509834958478, guid: e65966553916b8f4cb63a7eb6dfb21b0, type: 3}
+  - {fileID: 6601928509834958478, guid: 8ab3fc2c502e1914097db60a8e3af013, type: 3}
+  - {fileID: 6601928509834958478, guid: 62f992a55d5503e44855d6ad5dad2b0d, type: 3}
+  - {fileID: 6601928509834958478, guid: 0fda82dd79cb98c42bccc960d417a583, type: 3}
+  - {fileID: 6601928509834958478, guid: 403d2a991aff10844937bbb058331019, type: 3}
+  - {fileID: 6601928509834958478, guid: 4e812a53d0e16d74c9371966c9df2801, type: 3}
+  - {fileID: 6601928509834958478, guid: b34e8512c5393a1498ae1e081ee71408, type: 3}
+  - {fileID: 6601928509834958478, guid: 0adc4a5bb5dd0374fbbdd2bb791055e5, type: 3}
+  - {fileID: 6601928509834958478, guid: 2e64e2003772f2946a777b19e7710345, type: 3}
+  - {fileID: 6601928509834958478, guid: e32837328cdda714e8557642dea9a9a4, type: 3}
+  convertorPuzzlePieces: []
+  decorationsPuzzlePieces: []
