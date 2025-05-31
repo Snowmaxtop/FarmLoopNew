@@ -10,12 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164532985532652132, guid: 675947a1ad6838046971191e6297a960, type: 3}
       propertyPath: m_Name
-      value: PuzzlePieceLeftTop
+      value: PuzzlePieceDownLeft
       objectReference: {fileID: 0}
     - target: {fileID: 409407711549610632, guid: 675947a1ad6838046971191e6297a960, type: 3}
       propertyPath: PuzzlePieceSO
       value: 
-      objectReference: {fileID: 11400000, guid: f344247aa0e62f94faea5af3d9c2df99, type: 2}
+      objectReference: {fileID: 11400000, guid: 0ec3d98b1b014e446b4fa0d5f368353a, type: 2}
     - target: {fileID: 3358663659139331097, guid: 675947a1ad6838046971191e6297a960, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -56,10 +56,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3863381361225422483, guid: 675947a1ad6838046971191e6297a960, type: 3}
+      propertyPath: m_Name
+      value: Cube - Direction
+      objectReference: {fileID: 0}
     - target: {fileID: 4475853849287299637, guid: 675947a1ad6838046971191e6297a960, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 06f61ed0cf36f864db2723e54ead7477, type: 2}
+      objectReference: {fileID: 2100000, guid: f538e2ad35b65424d8e95191abae1c73, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

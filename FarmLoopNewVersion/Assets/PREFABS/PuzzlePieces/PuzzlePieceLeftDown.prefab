@@ -56,6 +56,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3863381361225422483, guid: 675947a1ad6838046971191e6297a960, type: 3}
+      propertyPath: m_Name
+      value: Cube - Direction
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475853849287299637, guid: 675947a1ad6838046971191e6297a960, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e48f8864c6c85b44b7bc88b9528680f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
